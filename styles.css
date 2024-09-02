@@ -1,0 +1,119 @@
+body {
+    background-color: white;
+    color: rgb(76, 76, 161);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color:rgb(76, 76, 161);;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.cell:hover {
+    background-color:rgb(120, 120, 164);;
+}
+
+.cell::before, .cell::after {
+    content: ''; /* Clear any pseudo-element content if added */
+    display: none; /* Hide any pseudo-elements if not used */
+}
+
+#restartButton {
+    background-color: rgb(76, 76, 161);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Ensure it’s above other elements if needed */
+    margin-top: 5px;
+}
+
+#restartButton:hover {
+    background-color: rgb(76, 76, 161);;
+}
+
+.winning-line {
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    transform-origin: center center;
+    transition: all 0.3s ease;
+    width: 4px;
+    height: 4px;
+}
+#result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgb(72, 72, 147) ;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2rem;
+    z-index: 2;
+    text-align: center;
+    display: none; /* Initially hidden */
+}
+
+#result.hidden {
+    display: none;
+}
+/* Container to position the GIF */
+.bear-container {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    margin-left: 20px; /* Space between game board and GIF */
+}
+
+/* Styling for the dancing bear GIF */
+#dancingBird {
+    width: 500px; /* Increase the width */
+    height: 300px; /* Adjust the height proportionally */
+    display: none; /* Ensure the GIF is visible */
+}
+
+
+.hidden {
+    display: none;
+}
